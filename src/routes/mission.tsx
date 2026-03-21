@@ -1,4 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Founders from "#/components/pages/mission/founders";
+import Hero from "#/components/pages/mission/hero";
+import IntensityMeter from "#/components/pages/mission/intensity-meter";
+import ValuesBento from "#/components/pages/mission/values-bento";
 
 export const Route = createFileRoute("/mission")({
 	head: () => ({
@@ -13,10 +17,11 @@ export const Route = createFileRoute("/mission")({
 
 function RouteComponent() {
 	return (
-		<main className="page-wrap px-4 pb-8 pt-14">
-			<section className="h-screen">
-				<h1 className="text-6xl font-bold">Mission</h1>
-			</section>
+		<main className="">
+			<Hero />
+			<ValuesBento />
+			<Founders />
+			<IntensityMeter />
 		</main>
 	);
 }
