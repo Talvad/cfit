@@ -32,7 +32,7 @@ const navLinks = [
 export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 bg-[#131313] border-b border-white/10 shadow-2xl py-4 backdrop-blur-lg">
-			<nav className="page-wrap  flex items-center gap-6">
+			<nav className="px-20 flex items-center gap-6">
 				<Logo />
 				<ul className="hidden md:flex gap-6">
 					{navLinks.map((link) => (

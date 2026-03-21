@@ -2,7 +2,7 @@ import { Zap } from "lucide-react";
 
 const Hero = () => {
 	return (
-		<section className="relative min-h-screen flex items-center overflow-hidden py-30">
+		<section className="relative min-h-screen flex items-center overflow-hidden py-40">
 			<div className="absolute inset-0 z-0">
 				<img
 					alt="Athletic Hero"
