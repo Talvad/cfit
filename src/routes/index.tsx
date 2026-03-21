@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Hero from "#/components/pages/hero";
 
 export const Route = createFileRoute("/")({
 	head: () => ({
@@ -13,7 +14,8 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<main className="page-wrap px-4 pb-8 pt-14">
+		<main className="">
+			<Hero />
 			<section className="h-screen">
 				<h1 className="text-6xl font-bold">CFIT</h1>
 			</section>

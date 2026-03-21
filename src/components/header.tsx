@@ -32,7 +32,7 @@ const navLinks = [
 export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 bg-[#131313] border-b border-white/10 shadow-2xl py-4 backdrop-blur-lg">
-			<nav className="page-wrap  flex justify-between items-center">
+			<nav className="page-wrap  flex items-center gap-6">
 				<Logo />
 				<ul className="hidden md:flex gap-6">
 					{navLinks.map((link) => (
@@ -56,7 +56,7 @@ export default function Header() {
 
 				<button
 					type="button"
-					className="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-headline font-extrabold tracking-tighter hover:scale-105 active:scale-95 transition-all"
+					className="ml-auto bg-(--primary-container) text-(--on-primary-container) px-6 py-2 rounded-full font-headline font-extrabold tracking-tighter hover:scale-105 active:scale-95 transition-all"
 				>
 					JOIN NOW
 				</button>
