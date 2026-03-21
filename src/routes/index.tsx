@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Hero from "#/components/pages/hero";
 import Mission from "#/components/pages/mission";
+import Protocols from "#/components/pages/protocols";
 
 export const Route = createFileRoute("/")({
 	head: () => ({
@@ -18,9 +19,7 @@ function App() {
 		<main className="">
 			<Hero />
 			<Mission />
-			<section className="h-screen">
-				<h1 className="text-6xl font-bold">CFIT</h1>
-			</section>
+			<Protocols />
 		</main>
 	);
 }
