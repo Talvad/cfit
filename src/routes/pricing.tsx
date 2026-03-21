@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/pricing")({
 	head: () => ({
 		meta: [
 			{
-				title: "Home - CFitness",
+				title: "Pricing - CFitness",
 			},
 		],
 	}),
-	component: App,
+	component: RouteComponent,
 });
 
-function App() {
+function RouteComponent() {
 	return (
 		<main className="page-wrap px-4 pb-8 pt-14">
 			<section className="h-screen">
-				<h1 className="text-6xl font-bold">CFIT</h1>
+				<h1 className="text-6xl font-bold">Pricing</h1>
 			</section>
 		</main>
 	);
