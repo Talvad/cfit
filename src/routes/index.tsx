@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Cta from "#/components/pages/cta";
 import Hero from "#/components/pages/hero";
 import Mission from "#/components/pages/mission";
 import Protocols from "#/components/pages/protocols";
@@ -20,6 +21,7 @@ function App() {
 			<Hero />
 			<Mission />
 			<Protocols />
+			<Cta />
 		</main>
 	);
 }

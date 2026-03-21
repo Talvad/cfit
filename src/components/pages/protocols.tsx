@@ -1,3 +1,5 @@
+import { Brain, CircleGauge } from "lucide-react";
+
 const Protocols = () => {
 	return (
 		<section className="bg-(--background) py-24">
@@ -47,14 +49,14 @@ const Protocols = () => {
 								Metabolic Engine
 							</h3>
 						</div>
-						<span className="material-symbols-outlined text-6xl text-(  --primary) opacity-20 group-hover:rotate-12 transition-transform">
-							speed
+						<span className="text-6xl text-(  --primary) opacity-20 group-hover:rotate-12 transition-transform">
+							<CircleGauge className="size-12" />
 						</span>
 					</div>
 					{/* <!-- Service 3 --> */}
 					<div className="bg-(--surface-container) rounded-xl p-8 flex flex-col justify-between group hover:bg-(--primary-container) transition-colors duration-300">
-						<span className="material-symbols-outlined text-4xl text-(--primary) group-hover:text-(--on-primary-container)">
-							psychology
+						<span className="text-4xl text-(--primary) group-hover:text-(--on-primary-container)">
+							<Brain className="size-12" />
 						</span>
 						<div>
 							<h3 className="font-headline text-xl font-black uppercase group-hover:text-(--on-primary-container)">
