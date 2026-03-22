@@ -140,6 +140,10 @@
         background: rgba(53, 53, 52, 0.6);
         backdrop-filter: blur(20px);
       }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
 /* 
 * {
   box-sizing: border-box;

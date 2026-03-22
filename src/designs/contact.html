@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#aabbc5",
+              "on-secondary-fixed": "#0d1e25",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed": "#d4e5ef",
+              "background": "#131313",
+              "on-primary-fixed-variant": "#930010",
+              "on-secondary": "#23333a",
+              "primary": "#ffb3ac",
+              "surface-container": "#201f1f",
+              "on-secondary-fixed-variant": "#394951",
+              "surface-tint": "#ffb3ac",
+              "tertiary-fixed": "#bee9ff",
+              "primary-fixed-dim": "#ffb3ac",
+              "outline-variant": "#5b403d",
+              "on-tertiary-fixed-variant": "#004d65",
+              "on-tertiary-container": "#e9f7ff",
+              "inverse-surface": "#e5e2e1",
+              "on-error": "#690005",
+              "on-tertiary": "#003546",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "surface": "#131313",
+              "secondary-container": "#3b4b53",
+              "on-primary": "#680008",
+              "surface-bright": "#393939",
+              "on-surface": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#7bd1f8",
+              "outline": "#ab8985",
+              "primary-container": "#d32f2f",
+              "on-primary-fixed": "#410003",
+              "secondary-fixed-dim": "#b8c9d3",
+              "surface-variant": "#353534",
+              "tertiary-container": "#00799c",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#131313",
+              "error-container": "#93000a",
+              "secondary": "#b8c9d3",
+              "on-surface-variant": "#e4beba",
+              "tertiary": "#7bd1f8",
+              "on-tertiary-fixed": "#001f2a",
+              "on-primary-container": "#fff2f0",
+              "primary-fixed": "#ffdad6",
+              "inverse-primary": "#ba1a20",
+              "surface-container-lowest": "#0e0e0e",
+              "on-background": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .heat-gradient {
+        background: linear-gradient(135deg, #ffb3ac 0%, #d32f2f 100%);
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 sticky z-50 border-b border-white/10 shadow-2xl">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black italic text-[#d32f2f] tracking-tighter font-headline uppercase">C-FIT</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Home</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Mission</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Gallery</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Achievements</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Pricing</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#ffb3ac] border-b-2 border-[#d32f2f] pb-1" href="#">Contact</a>
+</nav>
+<button class="heat-gradient text-on-primary-container px-6 py-2 rounded-full font-headline font-bold uppercase tracking-wider text-sm active:scale-95 duration-200 ease-in-out">
+                JOIN NOW
+            </button>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[409px] flex items-end px-8 pb-12 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="Dark industrial gym interior with red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV_H7nFf5xLBtYmmMNLxQ8h9mXSfVn1M4HX4FrUpRYYorKTXrx6Gj-xsrl31_z3qqymKH2slj0GaMmPY380Y8O1MF3k4iXo4_01VR5jx9GbdG3rtYmls9JrONfZaliJ0cIAU01lAAB8MeoqJcAlIVx4oNsWMmkAGpJTIoAFb8tt-p8dMXjjHm6J3qDTgNd1G8oIpBY83cdJC3Ba1wb-uBDC7_6jbAQf7pLe4ZQBkjMBEw-HfFjobviI8xYgpZzCxipWI_krbA3K2U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<h1 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-background">
+                    GET IN <span class="text-primary-container">TOUCH</span>
+</h1>
+<p class="font-body text-lg text-secondary mt-4 max-w-xl">
+                    Join the elite powerhouse. Reach out for memberships, personal training, or to tour our kinetic industrial facility.
+                </p>
+</div>
+</section>
+<!-- Main Content Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Contact Info & Location Column -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Address Card -->
+<div class="bg-surface-container p-8 rounded-xl border-l-4 border-primary-container">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-3xl">location_on</span>
+<div>
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface">Base of Operations</h3>
+<p class="text-secondary mt-2 leading-relaxed">
+                                    888 Kinetic Way, Industrial District<br/>
+                                    Steel City, SC 45021
+                                </p>
+</div>
+</div>
+</div>
+<!-- Direct Contact Card -->
+<div class="bg-surface-container-high p-8 rounded-xl">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface mb-6">Direct Lines</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
+<div>
+<p class="text-xs uppercase tracking-widest text-outline font-bold">Phone</p>
+<p class="text-on-surface font-headline font-bold text-lg">+1 (555) KINETIC</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">mail</span>
+<div>
+<p class="text-xs uppercase tracking-widest text-outline font-bold">Email</p>
+<p class="text-on-surface font-headline font-bold text-lg">HQ@C-FIT.COM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Training Hours -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-white/5">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface mb-4">The Forge Hours</h3>
+<ul class="space-y-3 font-body">
+<li class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-secondary">Mon - Fri</span>
+<span class="text-on-surface font-bold">04:00 - 23:00</span>
+</li>
+<li class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-secondary">Saturday</span>
+<span class="text-on-surface font-bold">06:00 - 20:00</span>
+</li>
+<li class="flex justify-between items-center pb-2">
+<span class="text-secondary">Sunday</span>
+<span class="text-primary-container font-black">MEMBERS ONLY (24H)</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Form Column -->
+<div class="lg:col-span-7 bg-surface-container-highest p-10 rounded-xl relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 p-8 opacity-5 select-none">
+<span class="font-headline text-9xl font-black">FIT</span>
+</div>
+<h2 class="font-headline text-3xl font-black uppercase tracking-tighter text-on-surface mb-8">Secure Your Station</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs uppercase tracking-widest font-bold text-outline">Full Name</label>
+<input class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all" placeholder="Enter name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs uppercase tracking-widest font-bold text-outline">Email Address</label>
+<input class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all" placeholder="Enter email" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs uppercase tracking-widest font-bold text-outline">Inquiry Type</label>
+<select class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all appearance-none">
+<option>Membership Plans</option>
+<option>Personal Training</option>
+<option>Corporate Packages</option>
+<option>Facility Tour</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs uppercase tracking-widest font-bold text-outline">Message</label>
+<textarea class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all resize-none" placeholder="How can we help you reach peak performance?" rows="5"></textarea>
+</div>
+<button class="w-full heat-gradient py-5 rounded-full font-headline font-black text-on-primary-container uppercase tracking-widest text-lg hover:brightness-110 active:scale-95 transition-all shadow-xl" type="submit">
+                            INITIATE CONTACT
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[500px] relative bg-surface-container-low grayscale contrast-125 opacity-80 hover:grayscale-0 transition-all duration-700">
+<div class="absolute inset-0 pointer-events-none z-10 bg-gradient-to-b from-background via-transparent to-background"></div>
+<img class="w-full h-full object-cover" data-alt="Satellite map view of the industrial district location" data-location="Steel City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtiTPiaUGWLOMkK8wkFSNYkPiyneT2f0VgmoL0FC8vqYIDlSbGa0yIuR2QQ_IpFUlhDpRHMaKuFMXM9OLbcuhMkBfxd7W93me6ejsmmdeCgx5X0K1dkIU0QHmdZ-hcPfb-E_4RPuZ-TSKemB2nHsSF8ji4-FV-tp8HXjBrblK6w1uSPiXXAkA_N3nuLTArQxJO3C6dgEpZTgwAP2uyOQ28AY8e-hFZR85yJfShDrRCD5ZU_xC3YnOaBESzqXcZFIsUoVaRO15vx0U"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative">
+<div class="absolute inset-0 bg-primary-container animate-ping rounded-full opacity-40"></div>
+<div class="bg-primary-container p-4 rounded-full shadow-[0_0_30px_rgba(211,47,47,0.8)] relative">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-weight="fill">location_on</span>
+</div>
+</div>
+</div>
+<!-- Interactive Map Overlay -->
+<div class="absolute bottom-12 left-12 z-20 glass-panel p-6 rounded-xl border border-white/10 max-w-xs">
+<p class="font-headline font-bold text-on-surface uppercase tracking-tight">C-FIT HQ</p>
+<p class="text-sm text-secondary mt-1">Get custom directions to the most advanced training facility in the state.</p>
+<button class="mt-4 flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs">
+                    OPEN IN NAVIGATION <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] dark:bg-[#1c1b1b] w-full pt-16 pb-8 relative before:content-[''] before:absolute before:top-0 before:w-full before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#d32f2f] before:to-transparent">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="text-xl font-black text-[#e5e2e1] font-headline">C-FIT</span>
+<p class="text-[#353534] mt-6 leading-relaxed font-body">Building the next generation of high-performance athletes through kinetic industrial precision.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold uppercase tracking-widest text-[#d32f2f] text-sm">Navigation</h4>
+<div class="grid grid-cols-2 gap-2">
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all text-sm font-body" href="#">Privacy Policy</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all text-sm font-body" href="#">Terms of Service</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all text-sm font-body" href="#">Location</a>
+<a class="text-[#ffb3ac] underline transition-all text-sm font-body" href="#">Contact Us</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all text-sm font-body" href="#">Careers</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-headline font-bold uppercase tracking-widest text-[#d32f2f] text-sm">Join the Network</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded-lg hover:text-[#ffb3ac] cursor-pointer transition-colors">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded-lg hover:text-[#ffb3ac] cursor-pointer transition-colors">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded-lg hover:text-[#ffb3ac] cursor-pointer transition-colors">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[#353534] text-xs font-['Inter'] tracking-wide">© 2024 C-FIT KINETIC POWERHOUSE. ALL RIGHTS RESERVED.</p>
+<img class="h-6 grayscale opacity-30" data-alt="C-FIT Official Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD16RMnA38oe0AJ2-qbmoFyuDjzXlChME1EXg8FvRc44BUGTpdp5N0XpG_SdCIFSeCclbltuWEC-bB0_BIKa8XDIULhVb23CCg_ki_1Dk-Cw03YyZ_GEtAcL23LGuaCXFNcCf8ZEvYmHCmmBF-L6nefpcLQ_Vc0v6cToBitlx9hRbQarJzGAD0vm-UES5oLu5tqg0bbLtEMe72D34P1ee1bTL6EuckkQxGGvX8LHFD-HPYN7wgeghwWiNEULIGqAIGi3610HulAtRk"/>
+</div>
+</footer>
+</body></html>
