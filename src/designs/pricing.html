@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C-FIT | Pricing &amp; Memberships</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800;900&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#aabbc5",
+              "on-secondary-fixed": "#0d1e25",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed": "#d4e5ef",
+              "background": "#131313",
+              "on-primary-fixed-variant": "#930010",
+              "on-secondary": "#23333a",
+              "primary": "#ffb3ac",
+              "surface-container": "#201f1f",
+              "on-secondary-fixed-variant": "#394951",
+              "surface-tint": "#ffb3ac",
+              "tertiary-fixed": "#bee9ff",
+              "primary-fixed-dim": "#ffb3ac",
+              "outline-variant": "#5b403d",
+              "on-tertiary-fixed-variant": "#004d65",
+              "on-tertiary-container": "#e9f7ff",
+              "inverse-surface": "#e5e2e1",
+              "on-error": "#690005",
+              "on-tertiary": "#003546",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "surface": "#131313",
+              "secondary-container": "#3b4b53",
+              "on-primary": "#680008",
+              "surface-bright": "#393939",
+              "on-surface": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#7bd1f8",
+              "outline": "#ab8985",
+              "primary-container": "#d32f2f",
+              "on-primary-fixed": "#410003",
+              "secondary-fixed-dim": "#b8c9d3",
+              "surface-variant": "#353534",
+              "tertiary-container": "#00799c",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#131313",
+              "error-container": "#93000a",
+              "secondary": "#b8c9d3",
+              "on-surface-variant": "#e4beba",
+              "tertiary": "#7bd1f8",
+              "on-tertiary-fixed": "#001f2a",
+              "on-primary-container": "#fff2f0",
+              "primary-fixed": "#ffdad6",
+              "inverse-primary": "#ba1a20",
+              "surface-container-lowest": "#0e0e0e",
+              "on-background": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .heat-gradient {
+        background: linear-gradient(135deg, #ffb3ac 0%, #d32f2f 100%);
+      }
+      .glass-card {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] border-b border-white/10 sticky top-0 z-50 shadow-2xl">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-4">
+<img alt="C-FIT Logo" class="h-10 w-auto" data-alt="C-FIT professional athletic brand logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdK2eWm8_ZtZM2eZHQk5uZwgpD44zB0aQTqqtuIsTlVUJWn2LjYEMdk2nwKwJectRUFDfUgitAXdsXydm9alj4ljC8WiYLNT1ln2C-WYXb9tUgRf6JbdnIqI9O23WGly39UQyBedqnhhSjjqBPkRv_zObB8TQGFjm2cjYkhzWtqLGq_CKpvJylPv0R45PrtX3Kvz5uYCD4_yXmGLLGKBqoF3IU5SQLwvaYbMFwUxx4L8D9Z9o7GqAu41Csak7nM6cXBnvesJS8LO8"/>
+<span class="text-3xl font-black italic text-[#d32f2f] tracking-tighter font-headline uppercase">C-FIT</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Home</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Mission</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Gallery</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Achievements</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#ffb3ac] border-b-2 border-[#d32f2f] pb-1" href="#">Pricing</a>
+<a class="font-['Lexend'] uppercase tracking-tighter font-bold text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-[#d32f2f] text-[#fff2f0] px-6 py-2 rounded-full font-headline font-black uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 duration-200 transition-all">
+                JOIN NOW
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[512px] flex items-center justify-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0 opacity-30">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+<img class="w-full h-full object-cover grayscale" data-alt="Intense high-performance industrial gym atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqyWhSiBtTR5jlUM-Y3eq5lG9x4LVvMJRdLDbul1yS5QtN0Dj9NFLaz5fN5BMu5WaNvca0lQc1OwXJKN2Thg497jeYvr7JxpVA2nPu5H76xcMqlpC2dMj5L3kFqSa1qR7IV2mIMhbwiM4IVvDMGRQMiKKJrFH0KkNrmHfR3kjVRvYamgK-pLMeZ6O_4ztoE7IDizn_WM0IyMuXpNMaS7PGf7Q-XQdTv1ZQeVPFr0ESWDxyBMsZ0HsGJim9v-XvdR3F19otYEgPpjU"/>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<h1 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 text-on-background">
+                    INVEST IN <span class="text-primary">POWER</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Transparent tiers built for peak performance. Choose your entry into the elite circle of C-FIT athletics.
+                </p>
+</div>
+</section>
+<!-- Pricing Grid -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Basic Tier -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-8 border border-white/5 transition-transform hover:-translate-y-2">
+<div class="mb-8">
+<span class="text-on-secondary-container text-xs font-headline font-bold uppercase tracking-[0.2em] mb-2 block">Foundational</span>
+<h3 class="text-3xl font-headline font-black uppercase text-on-surface">Basic</h3>
+</div>
+<div class="mb-8 flex items-baseline gap-1">
+<span class="text-5xl font-headline font-black text-primary">$49</span>
+<span class="text-on-surface-variant font-label">/MONTH</span>
+</div>
+<div class="flex-grow space-y-5 mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface text-sm">24/7 Access to Gym Floor</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Standard Locker Room</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Free Orientation Session</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Basic Progress Tracking</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-sm bg-surface-container-highest text-on-surface hover:bg-surface-bright transition-colors">
+                        SELECT PLAN
+                    </button>
+</div>
+<!-- Standard Tier (Featured) -->
+<div class="flex flex-col glass-card rounded-xl p-8 relative border-2 border-primary-container transform scale-105 z-10 shadow-2xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 heat-gradient px-6 py-1 rounded-full text-[10px] font-headline font-black uppercase tracking-[0.3em] text-on-primary-container">
+                        Most Popular
+                    </div>
+<div class="mb-8">
+<span class="text-primary text-xs font-headline font-bold uppercase tracking-[0.2em] mb-2 block">Performance</span>
+<h3 class="text-3xl font-headline font-black uppercase text-on-surface">Standard</h3>
+</div>
+<div class="mb-8 flex items-baseline gap-1">
+<span class="text-5xl font-headline font-black text-primary">$89</span>
+<span class="text-on-surface-variant font-label">/MONTH</span>
+</div>
+<div class="flex-grow space-y-5 mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface text-sm font-semibold">Unlimited Group Classes</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Sauna &amp; Steam Access</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Nutritional Consultation</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Advanced Mobile App Metrics</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">1 Guest Pass per Month</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl font-headline font-black uppercase tracking-widest text-sm heat-gradient text-on-primary-container hover:brightness-110 active:scale-95 transition-all shadow-lg">
+                        CHOOSE STANDARD
+                    </button>
+</div>
+<!-- Premium Tier -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-8 border border-white/5 transition-transform hover:-translate-y-2">
+<div class="mb-8">
+<span class="text-on-secondary-container text-xs font-headline font-bold uppercase tracking-[0.2em] mb-2 block">Elite</span>
+<h3 class="text-3xl font-headline font-black uppercase text-on-surface">Premium</h3>
+</div>
+<div class="mb-8 flex items-baseline gap-1">
+<span class="text-5xl font-headline font-black text-primary">$149</span>
+<span class="text-on-surface-variant font-label">/MONTH</span>
+</div>
+<div class="flex-grow space-y-5 mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface text-sm">2 Personal Training Sessions/mo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Priority Equipment Booking</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Physiotherapy Screening</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Recovery Lounge &amp; Cryo access</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm">Laundry Service for Training Gear</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-sm bg-surface-container-highest text-on-surface hover:bg-surface-bright transition-colors">
+                        SELECT PLAN
+                    </button>
+</div>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-5xl mx-auto px-6">
+<h2 class="font-headline text-3xl font-black uppercase mb-12 text-center">Detailed Comparison</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-white/5">
+<th class="py-6 px-4 font-headline uppercase text-on-surface-variant">Feature</th>
+<th class="py-6 px-4 font-headline uppercase text-primary">Basic</th>
+<th class="py-6 px-4 font-headline uppercase text-primary">Standard</th>
+<th class="py-6 px-4 font-headline uppercase text-primary">Premium</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="border-b border-white/5">
+<td class="py-6 px-4 font-semibold">24/7 Access</td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+</tr>
+<tr class="border-b border-white/5">
+<td class="py-6 px-4 font-semibold">Group Classes</td>
+<td class="py-6 px-4 text-on-surface-variant opacity-30">—</td>
+<td class="py-6 px-4">Unlimited</td>
+<td class="py-6 px-4">Unlimited</td>
+</tr>
+<tr class="border-b border-white/5">
+<td class="py-6 px-4 font-semibold">Personal Training</td>
+<td class="py-6 px-4 text-on-surface-variant opacity-30">—</td>
+<td class="py-6 px-4 text-on-surface-variant opacity-30">—</td>
+<td class="py-6 px-4">2 / Month</td>
+</tr>
+<tr class="border-b border-white/5">
+<td class="py-6 px-4 font-semibold">Recovery Zone</td>
+<td class="py-6 px-4 text-on-surface-variant opacity-30">—</td>
+<td class="py-6 px-4">Sauna Only</td>
+<td class="py-6 px-4">Full Suite</td>
+</tr>
+<tr>
+<td class="py-6 px-4 font-semibold">Guest Passes</td>
+<td class="py-6 px-4 text-on-surface-variant opacity-30">—</td>
+<td class="py-6 px-4">1 / Month</td>
+<td class="py-6 px-4">4 / Month</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6 text-center">
+<div class="max-w-2xl mx-auto glass-card p-12 rounded-3xl border border-white/5">
+<h2 class="font-headline text-4xl font-black uppercase mb-6 leading-tight">STILL NOT SURE?</h2>
+<p class="text-on-surface-variant mb-10">Try our powerhouse facilities for a day. Full access to everything for a single session.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-10 py-4 bg-surface-container-highest rounded-full font-headline font-black uppercase tracking-widest text-sm hover:brightness-125 transition-all">
+                        BOOK A DAY PASS
+                    </button>
+<button class="px-10 py-4 heat-gradient text-on-primary-container rounded-full font-headline font-black uppercase tracking-widest text-sm hover:scale-105 transition-all">
+                        TALK TO A COACH
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] dark:bg-[#1c1b1b] w-full pt-16 pb-8 relative before:content-[''] before:absolute before:top-0 before:w-full before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#d32f2f] before:to-transparent">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="text-xl font-black text-[#e5e2e1] font-headline uppercase">C-FIT</span>
+<p class="mt-4 text-[#353534] font-['Inter'] text-sm tracking-wide max-w-xs">
+                    Building the athletes of tomorrow with industrial-grade precision and unmatched intensity.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[#d32f2f] font-headline text-sm font-bold uppercase tracking-widest mb-2">QUICK LINKS</span>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all font-['Inter'] text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all font-['Inter'] text-sm tracking-wide" href="#">Terms of Service</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all font-['Inter'] text-sm tracking-wide" href="#">Location</a>
+<a class="text-[#353534] hover:text-[#e5e2e1] transition-all font-['Inter'] text-sm tracking-wide" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[#d32f2f] font-headline text-sm font-bold uppercase tracking-widest mb-2">NEWSLETTER</span>
+<div class="flex bg-surface-container-highest rounded-xl p-1">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full px-4 text-on-surface" placeholder="Email Address" type="email"/>
+<button class="p-2 text-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-[#353534] hover:text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-[#353534] hover:text-primary cursor-pointer">podcasts</span>
+<span class="material-symbols-outlined text-[#353534] hover:text-primary cursor-pointer">fitness_center</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-[#353534] font-['Inter'] text-xs tracking-widest uppercase">© 2024 C-FIT KINETIC POWERHOUSE. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-6">
+<a class="text-[#353534] hover:text-[#ffb3ac] transition-all text-xs uppercase font-bold tracking-widest" href="#">Instagram</a>
+<a class="text-[#353534] hover:text-[#ffb3ac] transition-all text-xs uppercase font-bold tracking-widest" href="#">Twitter</a>
+<a class="text-[#353534] hover:text-[#ffb3ac] transition-all text-xs uppercase font-bold tracking-widest" href="#">YouTube</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -136,6 +136,9 @@
         .obsidian-glass {
         background: rgba(53, 53, 52, 0.6);
         backdrop-filter: blur(20px);
+      }.glass-card {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
       }
 /* 
 * {
