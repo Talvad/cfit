@@ -1,4 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Comparision from "#/components/pages/pricing/comparision";
+import Cta from "#/components/pages/pricing/cta";
+import Hero from "#/components/pages/pricing/hero";
+import PricingGrid from "#/components/pages/pricing/pricing-grid";
 
 export const Route = createFileRoute("/pricing")({
 	head: () => ({
@@ -13,10 +17,11 @@ export const Route = createFileRoute("/pricing")({
 
 function RouteComponent() {
 	return (
-		<main className="page-wrap px-4 pb-8 pt-14">
-			<section className="h-screen">
-				<h1 className="text-6xl font-bold">Pricing</h1>
-			</section>
+		<main className="">
+			<Hero />
+			<PricingGrid />
+			<Comparision />
+			<Cta />
 		</main>
 	);
 }

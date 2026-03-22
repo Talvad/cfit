@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Cta from "#/components/pages/cta";
-import Hero from "#/components/pages/hero";
-import Mission from "#/components/pages/mission";
-import Protocols from "#/components/pages/protocols";
+import Cta from "#/components/pages/home/cta";
+import Hero from "#/components/pages/home/hero";
+import Mission from "#/components/pages/home/mission";
+import Protocols from "#/components/pages/home/protocols";
 
 export const Route = createFileRoute("/")({
 	head: () => ({

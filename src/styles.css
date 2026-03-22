@@ -130,6 +130,20 @@
 .heat-gradient {
             background: linear-gradient(135deg, #ffb3ac 0%, #d32f2f 100%);
         }
+        .kinetic-gradient {
+        background: linear-gradient(135deg, #d32f2f 0%, #680008 100%);
+      }
+        .obsidian-glass {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }.glass-card {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
 /* 
 * {
   box-sizing: border-box;

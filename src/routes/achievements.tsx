@@ -1,4 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Awards from "#/components/pages/achievements/awards";
+import Cta from "#/components/pages/achievements/cta";
+import Hero from "#/components/pages/achievements/hero";
+import Stats from "#/components/pages/achievements/stats";
+import SuccessStories from "#/components/pages/achievements/success-stories";
 
 export const Route = createFileRoute("/achievements")({
 	head: () => ({
@@ -13,10 +18,12 @@ export const Route = createFileRoute("/achievements")({
 
 function RouteComponent() {
 	return (
-		<main className="page-wrap px-4 pb-8 pt-14">
-			<section className="h-screen">
-				<h1 className="text-6xl font-bold">Achievements</h1>
-			</section>
+		<main className="">
+			<Hero />
+			<Stats />
+			<SuccessStories />
+			<Awards />
+			<Cta />
 		</main>
 	);
 }
