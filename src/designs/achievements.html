@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#aabbc5",
+              "on-secondary-fixed": "#0d1e25",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed": "#d4e5ef",
+              "background": "#131313",
+              "on-primary-fixed-variant": "#930010",
+              "on-secondary": "#23333a",
+              "primary": "#ffb3ac",
+              "surface-container": "#201f1f",
+              "on-secondary-fixed-variant": "#394951",
+              "surface-tint": "#ffb3ac",
+              "tertiary-fixed": "#bee9ff",
+              "primary-fixed-dim": "#ffb3ac",
+              "outline-variant": "#5b403d",
+              "on-tertiary-fixed-variant": "#004d65",
+              "on-tertiary-container": "#e9f7ff",
+              "inverse-surface": "#e5e2e1",
+              "on-error": "#690005",
+              "on-tertiary": "#003546",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "surface": "#131313",
+              "secondary-container": "#3b4b53",
+              "on-primary": "#680008",
+              "surface-bright": "#393939",
+              "on-surface": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#7bd1f8",
+              "outline": "#ab8985",
+              "primary-container": "#d32f2f",
+              "on-primary-fixed": "#410003",
+              "secondary-fixed-dim": "#b8c9d3",
+              "surface-variant": "#353534",
+              "tertiary-container": "#00799c",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#131313",
+              "error-container": "#93000a",
+              "secondary": "#b8c9d3",
+              "on-surface-variant": "#e4beba",
+              "tertiary": "#7bd1f8",
+              "on-tertiary-fixed": "#001f2a",
+              "on-primary-container": "#fff2f0",
+              "primary-fixed": "#ffdad6",
+              "inverse-primary": "#ba1a20",
+              "surface-container-lowest": "#0e0e0e",
+              "on-background": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .kinetic-gradient {
+        background: linear-gradient(135deg, #ffb3ac 0%, #d32f2f 100%);
+      }
+      .glass-card {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 sticky z-50 border-b border-white/10 shadow-2xl">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-4">
+<img alt="C-FIT Logo" class="h-10 w-auto" data-alt="Professional sports gym brand logo design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFHyXiARo2D7bxSMfP34kN9JkcFPpeoYCkU_jiVReZTpUKvRgF2eltXosZBeMHBQgcrXnt_mHqVfR3vNIMuj2lq01cdxtnDMXZytkSWwKt_FelEAxYON7SFbogydfknwzLEqdjzQwdInet13um8cupzJZKlvmr2tNQhJl1VVl5Urx393gMmW1I-LMprJfyz2-IlEb-31SS82sARRTQXyEhkWNB3YFcXldChRp6-xstTbnLCf74FhY1gwOjtXv7l9osQzpPx_v37-I"/>
+<span class="text-3xl font-black italic text-[#d32f2f] tracking-tighter font-headline uppercase">C-FIT</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Lexend'] uppercase tracking-tighter font-bold">
+<a class="text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Home</a>
+<a class="text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Mission</a>
+<a class="text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Gallery</a>
+<a class="text-[#ffb3ac] border-b-2 border-[#d32f2f] pb-1" href="#">Achievements</a>
+<a class="text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Pricing</a>
+<a class="text-[#e5e2e1] hover:text-[#ffb3ac] transition-colors" href="#">Contact</a>
+</nav>
+<button class="kinetic-gradient text-on-primary-container px-6 py-2 rounded-full font-headline font-bold uppercase tracking-widest text-sm active:scale-95 duration-200 ease-in-out">
+                JOIN NOW
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center overflow-hidden py-24">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+<img alt="Gym background" class="w-full h-full object-cover grayscale opacity-40" data-alt="High intensity gym environment with weights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXb7zoQHmbeSusCgp6VV2Lp-DQZ5W2jRGJZeBJIq2fkOs0V9t4GZ6RzbSsjuUuzfbUSdBRx-hmsZVnF1zvgn4XQVxqkbV71aPeX-W3mFpUIzqkrxpd2maevoWkD-vNt0Hc1O1XVY7RWBhJFTsNaVLMKHR-YkP5SZkPuJf0gbXE0K-U3itqKYzsFhVKIZhnU1LGoialmYwmJig_Fvbsk79WWZ174mslgYjorIZJcgR_KllxUzASHR-GM9avV70mNA8QYUptxGKhgzo"/>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-3xl">
+<span class="inline-block kinetic-gradient px-4 py-1 rounded-full text-xs font-headline font-black uppercase tracking-widest mb-6">Wall of Fame</span>
+<h1 class="text-6xl md:text-8xl font-headline font-black uppercase tracking-tighter leading-none text-on-background mb-8">
+                        FORGED IN <span class="text-primary italic">IRON.</span><br/>PROVEN BY <span class="text-primary">RESULTS.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                        At C-FIT, we don't just count reps; we count transformations. Explore the stories of our members who pushed past limits and redefined what's possible.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="py-24 bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Stat Card 1 -->
+<div class="md:col-span-2 bg-surface-container-highest p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline font-black text-6xl text-primary tracking-tighter">5,000+</h3>
+<p class="font-headline uppercase font-bold text-on-surface tracking-widest mt-2">Pounds Lost Collectively</p>
+<p class="mt-4 text-on-surface-variant max-w-xs">Our community relentless pursuit of health has resulted in massive life changes.</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-white/5 group-hover:text-primary/10 transition-colors">monitor_weight</span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-primary-container p-8 rounded-xl flex flex-col justify-end">
+<h3 class="font-headline font-black text-4xl text-on-primary-container tracking-tighter">98%</h3>
+<p class="font-headline uppercase font-bold text-on-primary-container/80 text-xs tracking-widest">Success Rate</p>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-high p-8 rounded-xl flex flex-col justify-end">
+<h3 class="font-headline font-black text-4xl text-on-surface tracking-tighter">12k</h3>
+<p class="font-headline uppercase font-bold text-on-surface-variant text-xs tracking-widest">Workouts Tracked</p>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-highest p-8 rounded-xl md:col-span-1 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl">military_tech</span>
+<div>
+<h3 class="font-headline font-black text-3xl text-on-surface tracking-tighter">National Champions</h3>
+<p class="text-xs text-on-surface-variant uppercase mt-1">4 Athletes Produced</p>
+</div>
+</div>
+<!-- Stat Card 5 - The Power Card -->
+<div class="md:col-span-3 bg-surface p-1 rounded-xl relative overflow-hidden border border-primary/10">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<h2 class="font-headline font-black text-4xl uppercase tracking-tighter mb-4">The Kinetic Standard</h2>
+<p class="text-on-surface-variant mb-6">We measure performance through science. Our proprietary C-FIT metric tracks power output, recovery, and metabolic efficiency.</p>
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-headline uppercase font-bold">
+<span>Strength Output</span>
+<span>85%</span>
+</div>
+<div class="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-headline uppercase font-bold">
+<span>Endurance Tier</span>
+<span>92%</span>
+</div>
+<div class="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 min-h-[300px]">
+<img alt="Gym Stats" class="w-full h-full object-cover" data-alt="Close up of gym equipment with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLimJbrirg4c8rz-bRMDiqg-cVxfis-st6n2OtPZgkYqr6gGfmTL7h7vfcTXnKxfwMQd1vns7oJaRHk1qHBX7krgo1gpkBXsli5YQm94xVnVAEt0WNHca5fi2EZPSynZJTplSPnE4BgLpXLywL8BrELyT9nSD6xNLlNEsqS8ZPz1GLZKH4TyXXc5kn26yARS5ZAuIHYNundqLOny3RvIjefRtjmWZRLC94xX_roFLPrDe7NQ9rNCEW1LnMWNHnQ7lDydIgwfGlAw"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories: Editorial Layout -->
+<section class="py-24 bg-background">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 flex items-end justify-between">
+<div>
+<h2 class="text-5xl font-headline font-black uppercase tracking-tighter">MEMBER <span class="text-primary italic">VOICES</span></h2>
+<div class="h-1 w-24 kinetic-gradient mt-4"></div>
+</div>
+<p class="hidden md:block text-on-surface-variant max-w-sm text-sm">Real stories from real people who decided that average wasn't enough.</p>
+</div>
+<div class="space-y-32">
+<!-- Story 1 -->
+<div class="flex flex-col md:flex-row items-center gap-12 group">
+<div class="w-full md:w-5/12 relative">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-primary/20 rounded-xl group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+<img alt="Sarah Story" class="relative z-10 w-full aspect-[4/5] object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Portrait of an athletic woman in gym attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzdUsOUxT0sgQbIuBo0Rt-3QIRgrBRlssT5MjPnzke8jVdPHvaIi41ZDjJvpHXOfhADMmyxZ_pPV1fsaFlo3JePq-x1QCHfvskbVuXISJha1xsEutmtNBixNUdKADl3JAuZ4k91Kx9qGbuXaXsbd7Mt4QsLmNsdeCchG2-CpzVVUnT6LiggBr_35Dt0QR8jIDVO0jL3zfSQ4LApDy5HiBx9PmI8_qHa6ohEeko4n5K2okpjH7asud8br97K0Fi747JaSJN430e3cU"/>
+</div>
+<div class="w-full md:w-7/12">
+<span class="font-headline font-bold text-primary tracking-widest uppercase text-sm">Transformation: 12 Months</span>
+<h3 class="text-6xl font-headline font-black uppercase tracking-tighter mt-4 mb-6 leading-none">SARAH <span class="text-primary">M.</span></h3>
+<blockquote class="text-2xl italic font-light text-on-surface mb-8 border-l-4 border-primary pl-6">
+                                "C-FIT didn't just change my body; it changed my mindset. I walked in wanting to lose weight and walked out a competitive powerlifter."
+                            </blockquote>
+<div class="grid grid-cols-2 gap-8 py-8 border-t border-white/5">
+<div>
+<p class="text-xs font-headline uppercase font-bold text-on-surface-variant tracking-widest">Squat PR</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">285 LBS</p>
+</div>
+<div>
+<p class="text-xs font-headline uppercase font-bold text-on-surface-variant tracking-widest">Body Fat %</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">-14%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Story 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+<div class="w-full md:w-5/12 relative">
+<div class="absolute -top-4 -right-4 w-full h-full border-2 border-primary/20 rounded-xl group-hover:-translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+<img alt="James Story" class="relative z-10 w-full aspect-[4/5] object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Strong male athlete resting between sets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuxIFKiC5EB3Xium8rRJWrPJFDiu9BmQ-N7OFm4v3GTDQmcL715EugFxIaWQlkEnsZPdvIjFGnRQucFYw7BG3Txb0EuNZNTsG7Pn7hJop3WeaypAJSC5-BEcUsXlq0Z7ixcknVi5AFTHk5NKGn3y6Cs0Jn544dSsFUfHYk9q5aZRKi0Imvv0Qx4E4k4cuIqoY3ow5cd1Xz-0QG2Xr4X9CzCkW_PefYeUbckjfDUuXHWKgy-KL3ov7pmELCuv_fsuQLqbfe8aXhsvU"/>
+</div>
+<div class="w-full md:w-7/12">
+<span class="font-headline font-bold text-primary tracking-widest uppercase text-sm">Transformation: 8 Months</span>
+<h3 class="text-6xl font-headline font-black uppercase tracking-tighter mt-4 mb-6 leading-none text-right">JAMES <span class="text-primary">K.</span></h3>
+<blockquote class="text-2xl italic font-light text-on-surface mb-8 border-r-4 border-primary pr-6 text-right">
+                                "The community here is relentless. When you see everyone else pushing at 110%, you have no choice but to keep up. My energy levels have doubled."
+                            </blockquote>
+<div class="grid grid-cols-2 gap-8 py-8 border-t border-white/5 text-right">
+<div>
+<p class="text-xs font-headline uppercase font-bold text-on-surface-variant tracking-widest">Lean Muscle Gained</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">+18 LBS</p>
+</div>
+<div>
+<p class="text-xs font-headline uppercase font-bold text-on-surface-variant tracking-widest">Resting Heart Rate</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">48 BPM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recognition & Awards -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-7-xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-black uppercase tracking-tighter">GYM <span class="text-primary italic">ACCOLADES</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">workspace_premium</span>
+</div>
+<h4 class="font-headline font-black uppercase text-xl mb-2">Best Gym 2023</h4>
+<p class="text-sm text-on-surface-variant">Voted #1 Training Facility by City Athletics Association.</p>
+</div>
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">verified</span>
+</div>
+<h4 class="font-headline font-black uppercase text-xl mb-2">Elite Certified</h4>
+<p class="text-sm text-on-surface-variant">All trainers are IFBB &amp; NASM Master Certified level or higher.</p>
+</div>
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">groups</span>
+</div>
+<h4 class="font-headline font-black uppercase text-xl mb-2">Community First</h4>
+<p class="text-sm text-on-surface-variant">Over $50k raised for local athletic youth scholarships.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 kinetic-gradient opacity-10"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter mb-8 leading-tight">YOUR STORY <br/>STARTS <span class="italic text-primary">TODAY.</span></h2>
+<button class="kinetic-gradient text-on-primary-container px-12 py-5 rounded-full font-headline font-black uppercase tracking-[0.2em] text-lg hover:brightness-110 transition-all shadow-xl shadow-primary/20">
+                    JOIN THE POWERHOUSE
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] dark:bg-[#1c1b1b] w-full pt-16 pb-8 relative before:content-[''] before:absolute before:top-0 before:w-full before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#d32f2f] before:to-transparent">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="text-xl font-black text-[#e5e2e1] font-headline uppercase tracking-tighter mb-4 block">C-FIT</span>
+<p class="text-[#353534] font-['Inter'] text-sm tracking-wide max-w-xs leading-relaxed">
+                    The elite destination for high-performance training and industrial-grade fitness excellence. 
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<ul class="space-y-3">
+<li><a class="text-[#353534] hover:text-[#e5e2e1] font-['Inter'] text-sm tracking-wide transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-[#353534] hover:text-[#e5e2e1] font-['Inter'] text-sm tracking-wide transition-all" href="#">Terms of Service</a></li>
+</ul>
+<ul class="space-y-3">
+<li><a class="text-[#353534] hover:text-[#e5e2e1] font-['Inter'] text-sm tracking-wide transition-all" href="#">Location</a></li>
+<li><a class="text-[#353534] hover:text-[#e5e2e1] font-['Inter'] text-sm tracking-wide transition-all" href="#">Contact Us</a></li>
+<li><a class="text-[#353534] hover:text-[#e5e2e1] font-['Inter'] text-sm tracking-wide transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-6 mb-8 md:mb-0">
+<span class="material-symbols-outlined text-[#353534] hover:text-[#ffb3ac] cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-[#353534] hover:text-[#ffb3ac] cursor-pointer transition-colors">monitoring</span>
+<span class="material-symbols-outlined text-[#353534] hover:text-[#ffb3ac] cursor-pointer transition-colors">fitness_center</span>
+</div>
+<p class="text-[#353534] font-['Inter'] text-xs tracking-widest uppercase">
+                    © 2024 C-FIT KINETIC POWERHOUSE. ALL RIGHTS RESERVED.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
