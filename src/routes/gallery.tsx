@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import GalleryGrid from "#/components/pages/gallery/gallery-grid";
+import Hero from "#/components/pages/gallery/hero";
+import Signature from "#/components/pages/gallery/signature";
 
 export const Route = createFileRoute("/gallery")({
 	head: () => ({
@@ -13,10 +16,10 @@ export const Route = createFileRoute("/gallery")({
 
 function RouteComponent() {
 	return (
-		<main className="page-wrap px-4 pb-8 pt-14">
-			<section className="h-screen">
-				<h1 className="text-6xl font-bold">Gallery</h1>
-			</section>
+		<main className="">
+			<Hero />
+			<GalleryGrid />
+			<Signature />
 		</main>
 	);
 }
