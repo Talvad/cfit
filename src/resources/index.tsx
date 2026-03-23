@@ -1,9 +1,11 @@
-import type { ReactNode } from "react";
+import { Home } from "lucide-react";
+import type { ElementType, ReactNode } from "react";
 import Logo from "#/components/logo";
 
 type NavLink = {
 	name: string;
 	href: string;
+	icon: ElementType;
 };
 type NavLinks = NavLink[];
 type Header = {
@@ -15,19 +17,23 @@ const menu: NavLinks = [
 	{
 		name: "Home",
 		href: "/",
+		icon: Home,
 	},
 	{
 		name: "Achievements",
 		href: "/achievements",
+		icon: Home,
 	},
 
 	{
 		name: "Pricing",
 		href: "/pricing",
+		icon: Home,
 	},
 	{
 		name: "Gallery",
 		href: "/gallery",
+		icon: Home,
 	},
 ];
 export const header: Header = {
@@ -60,18 +66,22 @@ const footerMenu: NavLinks = [
 	{
 		name: "Careers",
 		href: "/careers",
+		icon: Home,
 	},
 	{
 		name: "Location",
 		href: "/location",
+		icon: Home,
 	},
 	{
 		name: "Privacy Policy",
 		href: "/privacy-policy",
+		icon: Home,
 	},
 	{
 		name: "Terms of Service",
 		href: "/terms-of-service",
+		icon: Home,
 	},
 ];
 const footerContact: Item[] = [
