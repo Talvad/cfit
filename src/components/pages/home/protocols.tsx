@@ -4,7 +4,7 @@ const Protocols = () => {
 	return (
 		<section className="bg-(--background) py-24">
 			<div className="max-w-7xl mx-auto px-8">
-				<div className="flex justify-between items-end mb-16">
+				<div className="flex flex-wrap justify-between items-end mb-16">
 					<div>
 						<h2 className="font-headline text-5xl font-black tracking-tighter uppercase mb-4">
 							The Forge Protocols
