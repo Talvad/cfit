@@ -20,18 +20,14 @@ const menu: NavLinks = [
 		name: "Achievements",
 		href: "/achievements",
 	},
-	{
-		name: "Gallery",
-		href: "/gallery",
-	},
 
 	{
 		name: "Pricing",
 		href: "/pricing",
 	},
 	{
-		name: "Contact",
-		href: "/contact",
+		name: "Gallery",
+		href: "/gallery",
 	},
 ];
 export const header: Header = {
