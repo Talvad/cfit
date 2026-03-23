@@ -17,17 +17,14 @@ const menu: NavLinks = [
 		href: "/",
 	},
 	{
-		name: "Mission",
-		href: "/mission",
+		name: "Achievements",
+		href: "/achievements",
 	},
 	{
 		name: "Gallery",
 		href: "/gallery",
 	},
-	{
-		name: "Achievements",
-		href: "/achievements",
-	},
+
 	{
 		name: "Pricing",
 		href: "/pricing",

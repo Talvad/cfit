@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as MissionRouteImport } from './routes/mission'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AchievementsRouteImport } from './routes/achievements'
@@ -20,11 +19,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MissionRoute = MissionRouteImport.update({
-  id: '/mission',
-  path: '/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -59,7 +53,6 @@ export interface FileRoutesByFullPath {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/mission': typeof MissionRoute
   '/pricing': typeof PricingRoute
 }
 export interface FileRoutesByTo {
@@ -68,7 +61,6 @@ export interface FileRoutesByTo {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/mission': typeof MissionRoute
   '/pricing': typeof PricingRoute
 }
 export interface FileRoutesById {
@@ -78,7 +70,6 @@ export interface FileRoutesById {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/mission': typeof MissionRoute
   '/pricing': typeof PricingRoute
 }
 export interface FileRouteTypes {
@@ -89,17 +80,9 @@ export interface FileRouteTypes {
     | '/achievements'
     | '/contact'
     | '/gallery'
-    | '/mission'
     | '/pricing'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/achievements'
-    | '/contact'
-    | '/gallery'
-    | '/mission'
-    | '/pricing'
+  to: '/' | '/about' | '/achievements' | '/contact' | '/gallery' | '/pricing'
   id:
     | '__root__'
     | '/'
@@ -107,7 +90,6 @@ export interface FileRouteTypes {
     | '/achievements'
     | '/contact'
     | '/gallery'
-    | '/mission'
     | '/pricing'
   fileRoutesById: FileRoutesById
 }
@@ -117,7 +99,6 @@ export interface RootRouteChildren {
   AchievementsRoute: typeof AchievementsRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
-  MissionRoute: typeof MissionRoute
   PricingRoute: typeof PricingRoute
 }
 
@@ -128,13 +109,6 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mission': {
-      id: '/mission'
-      path: '/mission'
-      fullPath: '/mission'
-      preLoaderRoute: typeof MissionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -181,7 +155,6 @@ const rootRouteChildren: RootRouteChildren = {
   AchievementsRoute: AchievementsRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
-  MissionRoute: MissionRoute,
   PricingRoute: PricingRoute,
 }
 export const routeTree = rootRouteImport
