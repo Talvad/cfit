@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { NAV, SITE } from '@/lib/site';
+import { Suspense } from 'react';
+import { connection } from 'next/server';
 
 const heading = 'mb-3.5 font-display font-bold uppercase tracking-[0.2em] text-brand';
 const item = 'mb-2 text-mute';
@@ -43,10 +45,20 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-11 flex flex-wrap justify-between gap-2.5 border-t border-edge pt-5 text-sm text-mute">
-          <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
+          <Suspense fallback={<RightsReservedSkeleton/>}>
+            <RightsReserved/>
+          </Suspense>
           <span>{SITE.tagline}</span>
         </div>
       </div>
     </footer>
   );
+}
+
+function RightsReservedSkeleton(){
+  return <span>Loading...</span>
+}
+async function RightsReserved(){
+  await connection()
+  return <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
 }
