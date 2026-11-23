@@ -1,11 +1,13 @@
 import Footer from "@/components/footer";
-import '../globals.css'
+import Navbar from "@/components/nav-bar";
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+
+export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-    <main>{children}</main>
-    <Footer/>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }
