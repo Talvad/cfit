@@ -8,7 +8,7 @@ import type { Dashboard } from '@/lib/types';
 
 export default function DashboardPage() {
   const [month, setMonth] = useState(thisMonth());
-  const { data: d, loading, error } = useLoad(() => api<Dashboard>(`/dashboard?month=${month}`), [month]);
+  const { data: d, loading, error } = useLoad(() => api<Dashboard>(`/dashboard?month=${month}`), month);
 
   const maxTrend = Math.max(1, ...(d?.trend.map((t) => t.collected) || [1]));
   const programTotal = Object.values(d?.programs || {}).reduce((a, b) => a + b, 0) || 1;

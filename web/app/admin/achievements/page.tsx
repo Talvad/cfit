@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Badge, ErrorBox, Field, Loading, Modal, PageTitle, useToast } from '@/components/admin/ui';
 import { api, uploadImage } from '@/lib/admin-api';
-import { fmtDate, today, useLoad } from '@/lib/helpers';
+import { fmtDate, getErrorMessage, today, useLoad } from '@/lib/helpers';
 import type { Achievement } from '@/lib/seed';
 import { ACH_CATEGORIES } from '@/lib/types';
 
@@ -11,7 +11,7 @@ const blank = (): Form => ({ title: '', description: '', date: today(), category
 
 export default function AchievementsAdminPage() {
   const toast = useToast();
-  const { data, loading, error, reload } = useLoad(() => api<{ items: Achievement[] }>('/achievements'), []);
+  const { data, loading, error, reload } = useLoad(() => api<{ items: Achievement[] }>('/achievements'), '');
   const [form, setForm] = useState<Form | null>(null);
   const [busy, setBusy] = useState(false);
   const [formError, setFormError] = useState('');
@@ -34,8 +34,8 @@ export default function AchievementsAdminPage() {
       const key = await uploadImage(file, 'achievements');
       // Show a local preview; the CloudFront URL is used once saved
       setForm((f) => (f ? { ...f, imageKey: key, imageUrl: URL.createObjectURL(file) } : f));
-    } catch (e: any) {
-      setFormError(e.message);
+    } catch (e) {
+      setFormError(getErrorMessage(e));
     } finally {
       setBusy(false);
     }
@@ -53,8 +53,8 @@ export default function AchievementsAdminPage() {
       toast(form.id ? 'Achievement updated' : 'Achievement added');
       setForm(null);
       reload();
-    } catch (err: any) {
-      setFormError(err.message);
+    } catch (err) {
+      setFormError(getErrorMessage(err));
     } finally {
       setBusy(false);
     }
@@ -66,8 +66,8 @@ export default function AchievementsAdminPage() {
       await api(`/achievements/${a.id}`, { method: 'DELETE' });
       toast('Achievement deleted');
       reload();
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 

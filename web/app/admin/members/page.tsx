@@ -8,15 +8,16 @@ import { downloadCsv, fmtDate, inr, useLoad } from '@/lib/helpers';
 import { PROGRAMS, type Member } from '@/lib/types';
 
 const tone = { active: 'green', paused: 'amber', left: 'gray' } as const;
+const EMPTY_MEMBERS: Member[] = [];
 
 export default function MembersPage() {
-  const { data, loading, error, reload } = useLoad(() => api<{ items: Member[] }>('/members'), []);
+  const { data, loading, error, reload } = useLoad(() => api<{ items: Member[] }>('/members'), '');
   const [q, setQ] = useState('');
   const [status, setStatus] = useState('active');
   const [program, setProgram] = useState('');
   const [adding, setAdding] = useState(false);
 
-  const members = data?.items || [];
+  const members = data?.items ?? EMPTY_MEMBERS;
   const shown = useMemo(() => {
     const s = q.trim().toLowerCase();
     return members.filter(

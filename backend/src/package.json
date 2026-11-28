@@ -4,7 +4,8 @@
   "private": true,
   "description": "CFitness gym API (TypeScript Lambda, bundled by SAM + esbuild)",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "sam build --template-file ../template.yaml"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.600.0",
@@ -15,7 +16,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.140",
     "@types/node": "^20.0.0",
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.28.2",
     "typescript": "^5.4.0"
   }
 }

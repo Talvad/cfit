@@ -1,7 +1,7 @@
 'use client';
 import { Badge, ErrorBox, Loading, PageTitle, useToast } from '@/components/admin/ui';
 import { api } from '@/lib/admin-api';
-import { fmtDate, useLoad, waLink } from '@/lib/helpers';
+import { fmtDate, getErrorMessage, useLoad, waLink } from '@/lib/helpers';
 import type { Enquiry } from '@/lib/types';
 
 const STATUSES: Enquiry['status'][] = ['new', 'contacted', 'converted', 'closed'];
@@ -9,14 +9,14 @@ const tone = { new: 'red', contacted: 'amber', converted: 'green', closed: 'gray
 
 export default function EnquiriesPage() {
   const toast = useToast();
-  const { data, loading, error, reload } = useLoad(() => api<{ items: Enquiry[] }>('/enquiries'), []);
+  const { data, loading, error, reload } = useLoad(() => api<{ items: Enquiry[] }>('/enquiries'), '');
 
   async function setStatus(e: Enquiry, status: string) {
     try {
       await api(`/enquiries/${e.id}`, { method: 'PUT', body: { status } });
       reload();
-    } catch (err: any) {
-      toast(err.message, 'error');
+    } catch (err) {
+      toast(getErrorMessage(err), 'error');
     }
   }
 
@@ -25,8 +25,8 @@ export default function EnquiriesPage() {
     try {
       await api(`/enquiries/${e.id}`, { method: 'DELETE' });
       reload();
-    } catch (err: any) {
-      toast(err.message, 'error');
+    } catch (err) {
+      toast(getErrorMessage(err), 'error');
     }
   }
 

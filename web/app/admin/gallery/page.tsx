@@ -2,13 +2,13 @@
 import { useRef, useState } from 'react';
 import { ErrorBox, Field, Loading, Modal, PageTitle, useToast } from '@/components/admin/ui';
 import { api, uploadImage } from '@/lib/admin-api';
-import { useLoad } from '@/lib/helpers';
+import { getErrorMessage, useLoad } from '@/lib/helpers';
 import type { GalleryItem } from '@/lib/seed';
 import { GALLERY_CATEGORIES } from '@/lib/types';
 
 export default function GalleryAdminPage() {
   const toast = useToast();
-  const { data, loading, error, reload } = useLoad(() => api<{ items: GalleryItem[] }>('/gallery'), []);
+  const { data, loading, error, reload } = useLoad(() => api<{ items: GalleryItem[] }>('/gallery'), '');
   const fileRef = useRef<HTMLInputElement>(null);
   const [category, setCategory] = useState(GALLERY_CATEGORIES[0]);
   const [caption, setCaption] = useState('');
@@ -25,8 +25,8 @@ export default function GalleryAdminPage() {
         const key = await uploadImage(list[i], 'gallery');
         await api('/gallery', { method: 'POST', body: { key, category, caption: list.length === 1 ? caption : '' } });
         ok++;
-      } catch (e: any) {
-        toast(e.message, 'error');
+      } catch (e) {
+        toast(getErrorMessage(e), 'error');
       }
     }
     setProgress('');
@@ -42,8 +42,8 @@ export default function GalleryAdminPage() {
       await api(`/gallery/${item.id}`, { method: 'DELETE' });
       toast('Image deleted');
       reload();
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 
@@ -55,8 +55,8 @@ export default function GalleryAdminPage() {
       toast('Image updated');
       setEditing(null);
       reload();
-    } catch (err: any) {
-      toast(err.message, 'error');
+    } catch (err) {
+      toast(getErrorMessage(err), 'error');
     }
   }
 

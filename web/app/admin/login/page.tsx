@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useAuth } from '@/components/admin/AdminRoot';
 import { authConfigured, completeNewPassword, signIn } from '@/lib/auth';
+import { getErrorMessage } from '@/lib/helpers';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -33,8 +34,8 @@ export default function LoginPage() {
         await completeNewPassword(newPassword);
         await done();
       }
-    } catch (err: any) {
-      setError(err.message || 'Could not sign in');
+    } catch (err) {
+      setError(getErrorMessage(err, 'Could not sign in'));
     } finally {
       setBusy(false);
     }

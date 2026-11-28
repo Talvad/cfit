@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Badge, ErrorBox, Field, Loading, Modal, PageTitle, useToast } from '@/components/admin/ui';
 import { api } from '@/lib/admin-api';
-import { inr, useLoad } from '@/lib/helpers';
+import { getErrorMessage, inr, useLoad } from '@/lib/helpers';
 import type { Plan } from '@/lib/seed';
 import { PLAN_CATEGORIES } from '@/lib/types';
 
@@ -18,7 +18,7 @@ const blank: PlanForm = {
 
 export default function PricingAdminPage() {
   const toast = useToast();
-  const { data, loading, error, reload } = useLoad(() => api<{ items: Plan[] }>('/pricing'), []);
+  const { data, loading, error, reload } = useLoad(() => api<{ items: Plan[] }>('/pricing'), '');
   const [editing, setEditing] = useState<{ id?: string; form: PlanForm } | null>(null);
   const [busy, setBusy] = useState(false);
   const [formError, setFormError] = useState('');
@@ -54,8 +54,8 @@ export default function PricingAdminPage() {
       toast(editing.id ? 'Plan updated' : 'Plan added');
       setEditing(null);
       reload();
-    } catch (err: any) {
-      setFormError(err.message);
+    } catch (err) {
+      setFormError(getErrorMessage(err));
     } finally {
       setBusy(false);
     }
@@ -67,8 +67,8 @@ export default function PricingAdminPage() {
       await api(`/pricing/${p.id}`, { method: 'DELETE' });
       toast('Plan deleted');
       reload();
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 
@@ -76,8 +76,8 @@ export default function PricingAdminPage() {
     try {
       await api(`/pricing/${p.id}`, { method: 'PUT', body: { active: !(p.active !== false) } });
       reload();
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 

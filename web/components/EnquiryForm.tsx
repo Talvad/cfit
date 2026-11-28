@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { API_URL } from '@/lib/public-api';
+import { getErrorMessage } from '@/lib/helpers';
 
 const INTERESTS = ['Cardio', 'Personal Training', 'Cardio + Personal Training', 'Just looking around'];
 
@@ -27,8 +28,8 @@ export default function EnquiryForm() {
       }
       form.reset();
       setState('done');
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
+    } catch (err) {
+      setError(getErrorMessage(err));
       setState('error');
     }
   }

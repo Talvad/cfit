@@ -14,7 +14,7 @@ Parameters:
 
 Globals:
   Function:
-    Runtime: nodejs20.x
+    Runtime: nodejs22.x
     Architectures: [arm64]
     Timeout: 15
     MemorySize: 256
@@ -199,8 +199,24 @@ Resources:
       CodeUri: src/
       Handler: app.handler
       Policies:
-        - DynamoDBCrudPolicy: { TableName: !Ref AppTable }
-        - S3CrudPolicy: { BucketName: !Ref MediaBucket }
+        - Statement:
+            - Sid: AccessGymRecords
+              Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:DeleteItem
+                - dynamodb:Query
+                - dynamodb:UpdateItem
+              Resource:
+                - !GetAtt AppTable.Arn
+                - !Sub "${AppTable.Arn}/index/*"
+            - Sid: ManageGymMediaObjects
+              Effect: Allow
+              Action:
+                - s3:PutObject
+                - s3:DeleteObject
+              Resource: !Sub "${MediaBucket.Arn}/*"
       Events:
         PublicRoutes:
           Type: HttpApi
@@ -208,8 +224,6 @@ Resources:
             ApiId: !Ref HttpApi
             Path: /public/{proxy+}
             Method: ANY
-            Auth:
-              Authorizer: NONE
         AdminRoutes:
           Type: HttpApi
           Properties:

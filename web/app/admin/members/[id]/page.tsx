@@ -6,9 +6,8 @@ import MemberForm from '@/components/admin/MemberForm';
 import PaymentModal from '@/components/admin/PaymentModal';
 import { Badge, ErrorBox, Loading, PageTitle, useToast } from '@/components/admin/ui';
 import { api } from '@/lib/admin-api';
-import { fmtDate, inr, monthLabel, waLink } from '@/lib/helpers';
+import { fmtDate, getErrorMessage, inr, monthLabel, useLoad, waLink } from '@/lib/helpers';
 import type { Member, PaymentRecord } from '@/lib/types';
-import { useLoad } from '@/lib/helpers';
 
 export default function MemberDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -16,7 +15,7 @@ export default function MemberDetailPage() {
   const toast = useToast();
   const { data, loading, error, reload } = useLoad(
     () => api<{ member: Member; payments: PaymentRecord[] }>(`/members/${id}`),
-    [id]
+    id
   );
   const [editing, setEditing] = useState(false);
   const [paying, setPaying] = useState(false);
@@ -28,8 +27,8 @@ export default function MemberDetailPage() {
       await api(`/members/${id}`, { method: 'DELETE' });
       toast('Member deleted');
       router.replace('/admin/members');
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 
@@ -39,8 +38,8 @@ export default function MemberDetailPage() {
       await api(`/payments/${month}/${id}/${entryId}`, { method: 'DELETE' });
       toast('Payment removed');
       reload();
-    } catch (e: any) {
-      toast(e.message, 'error');
+    } catch (e) {
+      toast(getErrorMessage(e), 'error');
     }
   }
 

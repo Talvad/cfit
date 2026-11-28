@@ -13,7 +13,7 @@ export default function FeesPage() {
   const [month, setMonth] = useState(thisMonth());
   const [tab, setTab] = useState<Tab>('pending');
   const [paying, setPaying] = useState<FeeRow | null>(null);
-  const { data, loading, error, reload } = useLoad(() => api<FeesResponse>(`/fees?month=${month}`), [month]);
+  const { data, loading, error, reload } = useLoad(() => api<FeesResponse>(`/fees?month=${month}`), month);
 
   const rows = (data?.rows || []).filter((r) =>
     tab === 'all' ? true : tab === 'paid' ? r.status === 'paid' : r.balance > 0
