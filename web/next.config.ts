@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      ...(process.env.NEXT_PUBLIC_CLOUD_FRONT
+        ? [new URL(process.env.NEXT_PUBLIC_CLOUD_FRONT)]
+        : []),
+    ],
+  },
 };
 
 export default nextConfig;
