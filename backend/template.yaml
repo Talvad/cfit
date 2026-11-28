@@ -1,11 +1,11 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: CFitness gym backend - Cognito (admin only), single-table DynamoDB, HTTP API, S3 + CloudFront media
 
 Parameters:
   AllowedOrigins:
     Type: CommaDelimitedList
-    Default: "http://localhost:3000"
+    Default: "http://localhost:3000,https://cfitness.vercel.app"
     Description: Comma separated list of website origins allowed by CORS (e.g. https://cfitness.vercel.app,http://localhost:3000)
   GymUtcOffsetMinutes:
     Type: Number
