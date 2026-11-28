@@ -13,6 +13,8 @@ CFitness is a gym landing page and staff membership manager.
 - `web/` — Next.js 16 App Router, React, Tailwind CSS 4. Host the frontend on Vercel.
 - `backend/` — AWS SAM TypeScript Lambda, API Gateway HTTP API, Cognito, DynamoDB, S3, and CloudFront.
 
+The backend uses separate public and admin Lambda functions. The public function can query published content and create enquiries; the admin function handles membership operations and media management behind API Gateway JWT authorization and an additional `admins` group check. Both use the same DynamoDB table and shared domain modules.
+
 ## Local development
 
 Install the frontend dependencies from the lockfile and provide local configuration:

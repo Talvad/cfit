@@ -4,6 +4,7 @@
   "private": true,
   "description": "CFitness gym API (TypeScript Lambda, bundled by SAM + esbuild)",
   "scripts": {
+    "test": "node --import tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "build": "sam build --template-file ../template.yaml"
   },
@@ -17,6 +18,7 @@
     "@types/aws-lambda": "^8.10.140",
     "@types/node": "^20.0.0",
     "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.4.0"
   }
 }

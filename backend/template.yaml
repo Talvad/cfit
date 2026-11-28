@@ -21,9 +21,7 @@ Globals:
     Environment:
       Variables:
         TABLE_NAME: !Ref AppTable
-        MEDIA_BUCKET: !Ref MediaBucket
         MEDIA_BASE_URL: !Sub "https://${MediaDistribution.DomainName}"
-        GYM_UTC_OFFSET_MINUTES: !Ref GymUtcOffsetMinutes
 
 Resources:
   # ------------------------------------------------------------------ Auth
@@ -185,7 +183,7 @@ Resources:
               audience:
                 - !Ref UserPoolClient
 
-  ApiFunction:
+  PublicApiFunction:
     Type: AWS::Serverless::Function
     Metadata:
       BuildMethod: esbuild
@@ -194,10 +192,57 @@ Resources:
         Target: es2022
         Sourcemap: false
         EntryPoints:
-          - app.ts
+          - handlers/public.ts
     Properties:
       CodeUri: src/
-      Handler: app.handler
+      Handler: handlers/public.handler
+      Policies:
+        - Statement:
+            - Sid: ReadPublishedContent
+              Effect: Allow
+              Action: dynamodb:Query
+              Resource: !Sub "${AppTable.Arn}/index/GSI1"
+              Condition:
+                ForAllValues:StringEquals:
+                  dynamodb:LeadingKeys:
+                    - PLANS
+                    - GALLERY
+                    - ACHIEVEMENTS
+                "Null":
+                  dynamodb:LeadingKeys: "false"
+            - Sid: CreateEnquiries
+              Effect: Allow
+              Action: dynamodb:PutItem
+              Resource: !GetAtt AppTable.Arn
+              Condition:
+                ForAllValues:StringLike:
+                  dynamodb:LeadingKeys:
+                    - "ENQ#*"
+      Events:
+        PublicRoutes:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /public/{proxy+}
+            Method: ANY
+
+  AdminApiFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        EntryPoints:
+          - handlers/admin.ts
+    Properties:
+      CodeUri: src/
+      Handler: handlers/admin.handler
+      Environment:
+        Variables:
+          MEDIA_BUCKET: !Ref MediaBucket
+          GYM_UTC_OFFSET_MINUTES: !Ref GymUtcOffsetMinutes
       Policies:
         - Statement:
             - Sid: AccessGymRecords
@@ -218,12 +263,6 @@ Resources:
                 - s3:DeleteObject
               Resource: !Sub "${MediaBucket.Arn}/*"
       Events:
-        PublicRoutes:
-          Type: HttpApi
-          Properties:
-            ApiId: !Ref HttpApi
-            Path: /public/{proxy+}
-            Method: ANY
         AdminRoutes:
           Type: HttpApi
           Properties:

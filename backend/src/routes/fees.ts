@@ -3,79 +3,19 @@ import { HttpError, reply } from '../lib/http';
 import type { Ctx } from '../lib/http';
 import { COLLECTION, ENTITY, keys, paymentsInMonth, pk } from '../lib/keys';
 import * as u from '../lib/util';
-import type { Enquiry, FeeRow, FeeStatus, Member, PaymentEntry, PaymentRecord } from '../types';
-
-const statusOf = (due: number, paid: number): FeeStatus => {
-  if (paid >= due && (paid > 0 || due === 0)) return 'paid';
-  return paid > 0 ? 'partial' : 'pending';
-};
-
-const dueDateFor = (member: Member, month: string): string => {
-  const day = Math.min(member.feeDay || Number(member.joiningDate.slice(8, 10)) || 1, u.daysInMonth(month));
-  return `${month}-${String(day).padStart(2, '0')}`;
-};
-
-interface Totals {
-  expected: number;
-  collected: number;
-  pending: number;
-  paidCount: number;
-  pendingCount: number;
-  overdueCount: number;
-}
+import { buildFeeMonth } from '../services/fees';
+import type { Enquiry, Member, PaymentEntry, PaymentRecord } from '../types';
 
 // All payment records for a month: one indexed query (GSI1PK = PAYMONTH#yyyy-mm)
 const paymentsForMonth = (month: string) => db.queryIndex<PaymentRecord>(paymentsInMonth(month));
 
 // Every member who owes fees for `month`, with how much has been received.
-async function buildMonth(month: string): Promise<{ month: string; rows: FeeRow[]; totals: Totals }> {
+async function buildMonth(month: string) {
   const [members, payments] = await Promise.all([
     db.queryIndex<Member>(COLLECTION.members),
     paymentsForMonth(month),
   ]);
-  const payByMember = new Map(payments.map((p) => [p.memberId, p]));
-  const today = u.todayStr();
-
-  const rows: FeeRow[] = [];
-  for (const m of members) {
-    const rec = payByMember.get(m.id);
-    const owes = m.status === 'active' && (m.joiningDate ?? '').slice(0, 7) <= month;
-    if (!owes && !rec) continue;
-
-    const due = rec ? rec.due : m.amount;
-    const paid = rec ? rec.paid : 0;
-    const balance = Math.max(due - paid, 0);
-    const dueDate = dueDateFor(m, month);
-    rows.push({
-      memberId: m.id,
-      name: m.name,
-      phone: m.phone,
-      program: m.program,
-      memberStatus: m.status,
-      dueDate,
-      due,
-      paid,
-      balance,
-      status: statusOf(due, paid),
-      overdue: balance > 0 && dueDate < today,
-      entries: rec ? rec.entries : [],
-    });
-  }
-  rows.sort((a, b) => a.dueDate.localeCompare(b.dueDate) || a.name.localeCompare(b.name));
-
-  const totals = rows.reduce<Totals>(
-    (t, r) => {
-      t.expected += r.due;
-      t.collected += r.paid;
-      t.pending += r.balance;
-      if (r.status === 'paid') t.paidCount += 1;
-      else t.pendingCount += 1;
-      if (r.overdue) t.overdueCount += 1;
-      return t;
-    },
-    { expected: 0, collected: 0, pending: 0, paidCount: 0, pendingCount: 0, overdueCount: 0 }
-  );
-  return { month, rows, totals };
+  return buildFeeMonth(month, members, payments, u.todayStr());
 }
 
 export async function fees({ query }: Ctx) {
